@@ -1,23 +1,21 @@
 import Book from './book.js';
 
 class Library {
-
   #name;
   #inventory = [];
   #totalWords = 0;
-  
 
   constructor(name) {
     this.setName(name);
   }
 
   setName(name) {
-    if (typeof (name) !== "string") {
-      throw new Error()
+    if (typeof (name) !== 'string') {
+      throw new Error();
     }
     name = name.trim();
     if (name.length === 0) {
-      throw new Error()
+      throw new Error();
     }
     this.#name = name;
   }

@@ -1,10 +1,9 @@
 class Book {
-
   #title;
   #author;
   #pages;
   #words;
-  
+
   constructor(title, author, pages, words) {
     this.setTitle(title);
     this.setAuthor(author);
@@ -25,7 +24,7 @@ class Book {
   }
 
   getWords() {
-    return this.#words
+    return this.#words;
   }
 
   setTitle(title) {
@@ -41,21 +40,21 @@ class Book {
 
   setAuthor(author) {
     if (typeof (author) !== 'string') {
-      throw new Error()
+      throw new Error();
     }
     author = author.trim();
     if (author.length === 0) {
-      author = "Anónimo";
+      author = 'Anónimo';
     }
     this.#author = author;
   }
 
   setPages(pages) {
     if (typeof (pages) !== 'number' || isNaN(pages)) {
-      throw new Error()
+      throw new Error();
     }
     if (pages < 1) {
-      throw new Error()
+      throw new Error();
     }
     pages = Math.trunc(pages);
     this.#pages = pages;
@@ -70,7 +69,7 @@ class Book {
   }
 
   wordsPerPage() {
-    const promedio = this.#words/this.#pages;
+    const promedio = this.#words / this.#pages;
     return promedio;
   }
 
