@@ -4,8 +4,8 @@ class Library {
 
   #name;
   #inventory = [];
-  #totalWords;
-  #wordCount;
+  #totalWords = 0;
+  
 
   constructor(name) {
     this.setName(name);
@@ -26,9 +26,10 @@ class Library {
     return this.#name;
   }
 
-  addBook(title, author, pages) {
-    const newBook = new Book(title, author, pages);
+  addBook(title, author, pages, words) {
+    const newBook = new Book(title, author, pages, words);
     this.#inventory.push(newBook);
+    this.#totalWords += words;
   }
 
   getInventory() {
@@ -40,7 +41,7 @@ class Library {
   }
 
   totalWords() {
-    // TODO
+    return this.#totalWords;
   }
 }
 
